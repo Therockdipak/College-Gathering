@@ -22,7 +22,7 @@
         gathering[studentId] = Gathering(msg.sender,name,date,price,ticketCount,ticketCount);
         studentId++;
        }
-        function BuyTicket(uint id, uint price, uint quantity) public payable {
+        function BuyTicket(uint id, uint quantity) public payable {
            require(gathering[id].date!=0, "gathering does not exist");
            require(gathering[id].date>block.timestamp, "gathering is over");
            Gathering storage _gathering = gathering[id];
